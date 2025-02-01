@@ -1,0 +1,16 @@
+
+img {
+  width: 860px;
+  height: 500px;
+  object-fit: cover;
+}
+
+.title {
+  background: green;
+  padding: 1rem;
+}
+
+.p {
+  background: tomato;
+  padding: 2rem;
+}
