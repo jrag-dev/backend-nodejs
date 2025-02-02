@@ -1,0 +1,28 @@
+{
+  "peliculas": [
+    {
+      "nombre": "Harry Potter 4",
+      "rating": 9
+    },
+    {
+      "nombre": "El Justiciero",
+      "rating": 7
+    },
+    {
+      "nombre": "El fugitivo",
+      "rating": 10
+    },
+    {
+      "nombre": "El fugitivo I",
+      "rating": 10
+    },
+    {
+      "nombre": "El fugitivo II",
+      "rating": 10
+    },
+    {
+      "nombre": "Aprender",
+      "rating": 8
+    }
+  ]
+}
