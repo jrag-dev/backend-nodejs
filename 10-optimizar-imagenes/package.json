@@ -1,0 +1,23 @@
+{
+  "name": "10-optimizar-imagenes",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Creando una app en Node.js para optimizar imagenes para la web",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Jose Alvarado - josealvarado2117@gmail.com",
+  "license": "ISC",
+  "devDependencies": {
+    "fs-extra": "^11.3.0",
+    "imagemin": "^9.0.0",
+    "imagemin-gifsicle": "^7.0.0",
+    "imagemin-jpegtran": "^8.0.0",
+    "imagemin-pngquant": "^10.0.0",
+    "imagemin-svgo": "^11.0.1",
+    "imagemin-webp": "^8.0.0",
+    "sharp": "^0.33.5"
+  }
+}
