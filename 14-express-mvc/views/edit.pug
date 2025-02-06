@@ -1,0 +1,11 @@
+extends layout.pug
+
+block content
+  main.container 
+    h1.text-center= title 
+    form(action=`/tasks/edit/${task.id}` method="POST")
+      label(for="title") Nuevo título de la Tarea
+      input(type="text", id="title", name="title", value=task.title, required)
+      button.add-button(type="submit") Editar
+
+    a.back-button(href="/tasks") Volver
