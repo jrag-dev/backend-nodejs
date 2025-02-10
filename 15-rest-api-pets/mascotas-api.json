@@ -1,0 +1,228 @@
+{
+    "info": {
+        "_postman_id": "062f9585-2b33-43ca-9853-79f4c8a185c4",
+        "name": "mascotas-api",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "description": ""
+    },
+    "item": [
+        {
+            "name": "mascotas",
+            "item": [
+                {
+                    "name": "Obtener una mascota",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "http://localhost:5001/mascotas/679dbf69ce842302ee1c56c5",
+                            "path": [
+                                "mascotas",
+                                "679dbf69ce842302ee1c56c5"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "5001"
+                        }
+                    }
+                },
+                {
+                    "name": "Obtener todas las mascotas",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "http://localhost:5001/mascotas",
+                            "path": [
+                                "mascotas"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "5001"
+                        }
+                    }
+                },
+                {
+                    "name": "Crear una mascota",
+                    "request": {
+                        "method": "POST",
+                        "url": {
+                            "raw": "http://localhost:5001/mascotas",
+                            "path": [
+                                "mascotas"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "5001"
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\n  \"nombre\": \"Nevado\",\n  \"tipo\": \"perro\",\n  \"raza\": \"Popular\",\n  \"edad\": 15,\n  \"descripcion\": \"Muy juguetón y cariñoso, además cuida la casa\"\n}"
+                        }
+                    }
+                },
+                {
+                    "name": "Actualizar una mascota",
+                    "request": {
+                        "method": "PUT",
+                        "url": {
+                            "raw": "http://localhost:5001/pets/679dbfcace842302ee1c56c7",
+                            "path": [
+                                "pets",
+                                "679dbfcace842302ee1c56c7"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "5001"
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\n  \"descripcion\": \"El perrito de mi hija milagros, que se portaba muy mal\",\n  \"edad\": 1\n}"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Impvc2VAZW1haWwuY29tIiwiaWF0IjoxNzM4NTQ1MDY3LCJleHAiOjE3Mzg1NDg2Njd9.7gI0VMGfUXzAHDfTMotwAzPH3bPJi8zJHB29XOLW8pI",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Eliminar una mascota",
+                    "request": {
+                        "method": "DELETE",
+                        "url": {
+                            "raw": "http://localhost:5001/pets/679dc049ce842302ee1c56cb",
+                            "path": [
+                                "pets",
+                                "679dc049ce842302ee1c56cb"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "5001"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Impvc2VAZW1haWwuY29tIiwiaWF0IjoxNzM4NTQ1MDY3LCJleHAiOjE3Mzg1NDg2Njd9.7gI0VMGfUXzAHDfTMotwAzPH3bPJi8zJHB29XOLW8pI",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "usuarios",
+            "item": [
+                {
+                    "name": "register",
+                    "request": {
+                        "method": "POST",
+                        "url": {
+                            "raw": "http://localhost:5001/users/register",
+                            "path": [
+                                "users",
+                                "register"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "5001"
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\n  \"email\": \"jose@email.com\",\n  \"nombre\": \"Jose Alvarado\",\n  \"telefono\": \"0414-8206097\",\n  \"clave\": \"123456\"\n}"
+                        }
+                    }
+                },
+                {
+                    "name": "login",
+                    "request": {
+                        "method": "POST",
+                        "url": {
+                            "raw": "http://localhost:5001/users/login",
+                            "path": [
+                                "users",
+                                "login"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "5001"
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\n  \"email\": \"jose@email.com\",\n  \"clave\": \"123456\"\n}"
+                        }
+                    }
+                },
+                {
+                    "name": "profile",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "http://localhost:5001/users/profile",
+                            "path": [
+                                "users",
+                                "profile"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "5001"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Impvc2VAZW1haWwuY29tIiwiaWF0IjoxNzM4NTQ1MDY3LCJleHAiOjE3Mzg1NDg2Njd9.7gI0VMGfUXzAHDfTMotwAzPH3bPJi8zJHB29XOLW8pI",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}
