@@ -1,0 +1,35 @@
+{
+  "name": "16-rest-auth-jsonwebtoken",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Rest api con autenticación y autorización usando jsonwebtoken con express.js",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon ./server.js",
+    "start": "node ./server.js"
+  },
+  "keywords": [
+    "jsonwebtoken",
+    "node.js",
+    "express.js",
+    "rest",
+    "api",
+    "authentication",
+    "authorization"
+  ],
+  "author": "Jose Alvarado",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "helmet": "^8.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.10.0",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
