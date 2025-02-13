@@ -1,11 +1,14 @@
-const { Router } = require("express");
+import { Router } from "express";
 
 
 const router = Router();
 
-router.get('/', (req, res) => {
+router.post('/register', (req, res) => {
 
 })
 
+router.post('/login', (req, res) => {
+
+})
 
 export default router;

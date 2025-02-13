@@ -8,6 +8,7 @@ import "dotenv/config";
 import "./config/db.js";
 
 import productRoutes from "./routes/products.routes.js";
+import authRoutes from "./routes/auth.routes.js";
 
 
 class App {
@@ -36,7 +37,8 @@ class App {
         version: this.app.get('pkg').version,
       })
     })
-    this.app.use('/api/v1/products', productRoutes )
+    this.app.use('/api/v1/products', productRoutes );
+    this.app.use('/api/v1/auth', authRoutes);
   }
 }
 
