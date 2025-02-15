@@ -9,12 +9,15 @@ import "./config/db.js";
 
 import productRoutes from "./routes/products.routes.js";
 import authRoutes from "./routes/auth.routes.js";
+import RoleService from "./services/role.service.js";
 
 
 class App {
 
   constructor() {
     this.app = express();
+    this.roleService = new RoleService();
+    this.roleService.createRoles()
     this.middlewares();
     this.routes();
   }
