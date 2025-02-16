@@ -21,7 +21,7 @@ class UserRepository {
   }
   
   async findByIdWithoutPassword(id) {
-    return await User.findById(id, { password: 0 });
+    return await User.findById(id, { password: 0 }).populate('roles');
   }
 
   async update(id, userData) {
