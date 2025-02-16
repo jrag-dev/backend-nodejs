@@ -1,3 +1,4 @@
+import { comparePassword } from "../helpers/bcrypt.js";
 import { createJsonWebToken } from "../middlewares/jwt.middleware.js";
 import AuthService from "../services/auth.service.js";
 import RoleService from "../services/role.service.js";
@@ -20,15 +21,14 @@ class AuthController {
         return res.status(400).json({ success: false, message: 'Email already registered' });
       }
 
-      
       const newUser = await this.authService.register(
         {
           username,
           email,
-          password
+          password,
+          roles
         }
       )
-       
       const token = createJsonWebToken({ id: newUser._id });
 
       res.status(201).json({ success: true, message: 'User registered successfully', token })
@@ -38,8 +38,22 @@ class AuthController {
   }
 
   async login(req, res) {
+    const { email, password } = req.body;
     try {
-      res.status(201).json({ success: true, message: 'User logged successfully'})
+      const userFounded = await this.userService.getByEmail(email);
+      if (!userFounded) {
+        return res.status(400).json({ success: false, message: "This email isn't registered" });
+      }
+      
+      const passwordCorrect = await comparePassword(password, userFounded.password);
+      if (!passwordCorrect) {
+        return res.status(400).json({ success: false, message: "Password not correct" });
+      }
+
+      const token = createJsonWebToken({ id: userFounded._id });
+
+      console.log(userFounded);
+      res.status(200).json({ success: true, message: 'User logged successfully', token })
     } catch (err) { 
       res.status(500).json({ success: false, message: err.message });
     }

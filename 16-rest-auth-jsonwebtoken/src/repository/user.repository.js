@@ -13,7 +13,7 @@ class UserRepository {
   }
 
   async findByEmail(email) {
-    return await User.findOne({ email });
+    return await User.findOne({ email }).populate('roles');
   }
 
   async findById(id) {

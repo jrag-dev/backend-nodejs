@@ -20,16 +20,12 @@ class AuthService {
 
     if (roles) {
       const foundedRoles = await this.roleService.findRoles(roles);
-      console.log("Roles: ", foundedRoles)
       newUser.roles = foundedRoles.map( role => role._id );
     } else {
       const role = await this.roleService.findRoleByName("user");
-      console.log("rol: ", role)
-      console.log("rol id: ", role._id)
-      newUser.roles = [role._id];
+      newUser.roles = [...role].map(item => item._id)
     }
 
-    console.log(newUser)
     return await this.userRespository.create(newUser);
   }
 
