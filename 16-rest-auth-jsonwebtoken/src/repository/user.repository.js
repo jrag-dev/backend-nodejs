@@ -19,6 +19,10 @@ class UserRepository {
   async findById(id) {
     return await User.findById(id);
   }
+  
+  async findByIdWithoutPassword(id) {
+    return await User.findById(id, { password: 0 });
+  }
 
   async update(id, userData) {
     return await User.findOneAndUpdate({ _id: id }, userData, { new: true });

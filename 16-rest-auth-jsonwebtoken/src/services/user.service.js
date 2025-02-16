@@ -15,6 +15,10 @@ class UserService {
   async getById(id) {
     return await this.userRespository.findById(id);
   }
+  
+  async getByIdWithoutPassword(id) {
+    return await this.userRespository.findByIdWithoutPassword(id);
+  }
 }
 
 export default UserService;
